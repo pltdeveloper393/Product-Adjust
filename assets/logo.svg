@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 130" width="1000" height="260" role="img" aria-label="Product ADJust">
+  <defs>
+    <linearGradient id="icon-bg" x1="0.1" y1="0" x2="0.6" y2="1">
+      <stop offset="0%" stop-color="#2A3550"/>
+      <stop offset="100%" stop-color="#131B2C"/>
+    </linearGradient>
+    <linearGradient id="icon-body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="icon-stem" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A5B4FC"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+    <linearGradient id="text-d-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#818CF8"/>
+      <stop offset="29.2%" stop-color="#818CF8"/>
+      <stop offset="28%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(0, 23)">
+    <rect width="84" height="84" rx="18.9" fill="url(#icon-bg)"/>
+    <g transform="translate(11, 11)">
+      <g transform="scale(0.62)">
+        <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z
+                 M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+              fill="url(#icon-body)" fill-rule="evenodd"/>
+        <rect x="18" y="12" width="20" height="76" fill="url(#icon-stem)"/>
+        <circle cx="28" cy="50" r="6" fill="#0B1220"/>
+        <circle cx="28" cy="50" r="2.5" fill="#A5B4FC"/>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(110, 0)">
+    <text x="0" y="66" font-family="Manrope, 'Inter', sans-serif" font-weight="700"
+          font-size="44" letter-spacing="-1.76" fill="#F1F5F9">
+      <tspan>Product </tspan><tspan fill="#818CF8">A</tspan><tspan fill="url(#text-d-accent)">D</tspan><tspan>Just</tspan>
+    </text>
+    <text x="0" y="92" font-family="Manrope, 'Inter', sans-serif" font-weight="600"
+          font-size="12" letter-spacing="2.64" fill="#94A3B8">
+      AI-POWERED PRODUCT CARDS
+    </text>
+  </g>
+</svg>
