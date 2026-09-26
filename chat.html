@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#060B16">
+  <meta name="description" content="Product ADJust — чат с ИИ-ассистентом. Генерация карточек товаров.">
+  <title>ИИ-чат — Product ADJust</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Боковая навигация (планшет/десктоп) -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="brand__icon">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="gi-c-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+              </linearGradient>
+              <linearGradient id="gi-c-stem" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                  fill="url(#gi-c-body)" fill-rule="evenodd"/>
+            <rect x="18" y="12" width="20" height="76" fill="url(#gi-c-stem)"/>
+            <circle cx="28" cy="50" r="6" fill="#060B16"/>
+            <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+          </svg>
+        </span>
+        <span class="brand__text"><span>Product </span><span class="a">A</span><span class="d">D</span><span>Just</span></span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Основная навигация">
+        <a class="sidebar__link" href="home.html">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          Главная
+        </a>
+        <a class="sidebar__link" href="product.html">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          Товары
+        </a>
+        <a class="sidebar__link" href="chat.html" aria-current="page">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          ИИ-чат
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          Анализ
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          Профиль
+        </a>
+      </nav>
+
+      <div class="sidebar__spacer"></div>
+
+      <a class="sidebar__link" href="index.html">
+        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+        Выйти
+      </a>
+    </aside>
+
+    <div class="app__col">
+
+      <header class="appbar">
+        <button class="icon-btn only-desktop" type="button" data-nav-toggle
+                aria-label="Скрыть меню" aria-expanded="true">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- Мобильные: назад + история чатов -->
+        <a class="icon-btn only-mobile" href="home.html" aria-label="Назад">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+        <button class="icon-btn only-mobile" type="button" data-history-toggle aria-label="История чатов">
+          <i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="appbar__title">
+          <div>ИИ-ассистент</div>
+          <div class="chat__online">● Онлайн</div>
+        </div>
+
+        <button class="icon-btn" type="button" aria-label="Новый чат">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i>
+        </button>
+      </header>
+
+      <!-- История чатов: панель (десктоп) / drawer (мобайл) -->
+      <div class="chat-layout">
+
+        <aside class="chat-history" aria-label="История чатов">
+          <div class="chat-history__top">
+            <button class="btn btn--soft btn--block btn--sm" type="button">
+              <i class="fa-solid fa-plus" aria-hidden="true"></i>
+              Новый чат
+            </button>
+          </div>
+          <nav class="chat-history__list" aria-label="Диалоги">
+            <div class="chat-history__group">Сегодня</div>
+            <a class="chat-history__item is-active" href="#" aria-current="true">
+              <span class="chat-history__title">Кроссовки Nike Air Max 90</span>
+              <span class="chat-history__meta">Описание и SEO-ключи · 14:32</span>
+            </a>
+            <a class="chat-history__item" href="#">
+              <span class="chat-history__title">Рюкзак Urban Classic</span>
+              <span class="chat-history__meta">Анализ товара · 12:10</span>
+            </a>
+
+            <div class="chat-history__group">Вчера</div>
+            <a class="chat-history__item" href="#">
+              <span class="chat-history__title">SEO-ключи для Kufar</span>
+              <span class="chat-history__meta">6 ключей · 18:45</span>
+            </a>
+            <a class="chat-history__item" href="#">
+              <span class="chat-history__title">Наушники Sound Pro</span>
+              <span class="chat-history__meta">Название и описание · 16:02</span>
+            </a>
+          </nav>
+        </aside>
+
+        <div class="chat-main">
+
+          <main class="chat__body" data-chat-scroll>
+            <section class="chat__thread" data-chat-body aria-label="История сообщений" aria-live="polite">
+
+              <div class="msg msg--ai">
+                <div class="msg__avatar">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gm-1-body" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+                      </linearGradient>
+                      <linearGradient id="gm-1-stem" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                          fill="url(#gm-1-body)" fill-rule="evenodd"/>
+                    <rect x="18" y="12" width="20" height="76" fill="url(#gm-1-stem)"/>
+                    <circle cx="28" cy="50" r="6" fill="#060B16"/>
+                    <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+                  </svg>
+                </div>
+                <div class="msg__content">
+                  <div class="msg__bubble">Привет! Я помогу создать карточку товара. Загрузите фото или опишите товар — сгенерирую описание, название и SEO-ключи.</div>
+                  <div class="msg__time">14:30</div>
+                </div>
+              </div>
+
+              <div class="msg msg--user">
+                <div class="msg__avatar">И</div>
+                <div class="msg__content">
+                  <div class="msg__bubble">Сгенерируй описание для кроссовок Nike Air Max 90</div>
+                  <div class="msg__time">14:31</div>
+                </div>
+              </div>
+
+              <div class="msg msg--ai">
+                <div class="msg__avatar">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gm-2-body" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+                      </linearGradient>
+                      <linearGradient id="gm-2-stem" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                          fill="url(#gm-2-body)" fill-rule="evenodd"/>
+                    <rect x="18" y="12" width="20" height="76" fill="url(#gm-2-stem)"/>
+                    <circle cx="28" cy="50" r="6" fill="#060B16"/>
+                    <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+                  </svg>
+                </div>
+                <div class="msg__content">
+                  <div class="msg__bubble">
+                    <strong>Nike Air Max 90 — классика спортивного стиля</strong><br><br>
+                    Кроссовки Nike Air Max 90 сочетают культовый дизайн и современные технологии. Верх из сетчатого материала обеспечивает дыхание ног, а система Air Max в области пятки гарантирует амортизацию при каждом шаге.<br><br>
+                    <span class="text-accent" style="font-weight:600;">Подходит для:</span> повседневной носки, спорта, прогулок.
+                    <div class="msg__quick">
+                      <button class="chip" type="button"><i class="fa-regular fa-copy" aria-hidden="true"></i> Скопировать</button>
+                      <button class="chip" type="button"><i class="fa-solid fa-box" aria-hidden="true"></i> В товар</button>
+                    </div>
+                  </div>
+                  <div class="msg__time">14:31</div>
+                </div>
+              </div>
+
+              <div class="msg msg--user">
+                <div class="msg__avatar">И</div>
+                <div class="msg__content">
+                  <div class="msg__bubble">Сгенерируй изображение для карточки</div>
+                  <div class="msg__time">14:32</div>
+                </div>
+              </div>
+
+              <div class="msg msg--ai">
+                <div class="msg__avatar">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gm-3-body" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+                      </linearGradient>
+                      <linearGradient id="gm-3-stem" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                          fill="url(#gm-3-body)" fill-rule="evenodd"/>
+                    <rect x="18" y="12" width="20" height="76" fill="url(#gm-3-stem)"/>
+                    <circle cx="28" cy="50" r="6" fill="#060B16"/>
+                    <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+                  </svg>
+                </div>
+                <div class="msg__content">
+                  <div class="msg__bubble">Готово — изображение для карточки:</div>
+                  <div class="msg__image">
+                    <div class="media-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="msg__time">14:32</div>
+                </div>
+              </div>
+
+              <div class="msg msg--user">
+                <div class="msg__avatar">И</div>
+                <div class="msg__content">
+                  <div class="msg__bubble">Добавь SEO-ключи для Kufar</div>
+                  <div class="msg__time">14:33</div>
+                </div>
+              </div>
+
+              <div class="msg msg--ai">
+                <div class="msg__avatar">
+                  <svg viewBox="0 0 100 100" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="gm-4-body" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+                      </linearGradient>
+                      <linearGradient id="gm-4-stem" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+                      </linearGradient>
+                    </defs>
+                    <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                          fill="url(#gm-4-body)" fill-rule="evenodd"/>
+                    <rect x="18" y="12" width="20" height="76" fill="url(#gm-4-stem)"/>
+                    <circle cx="28" cy="50" r="6" fill="#060B16"/>
+                    <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+                  </svg>
+                </div>
+                <div class="msg__content">
+                  <div class="msg__bubble">
+                    <strong>SEO-ключи для Kufar:</strong><br><br>
+                    nike air max 90, кроссовки nike air max, nike air max 90 купить, кроссовки для бега nike, спортивная обувь nike, air max 90 классика
+                    <div class="msg__quick">
+                      <button class="chip" type="button"><i class="fa-regular fa-copy" aria-hidden="true"></i> Скопировать</button>
+                      <button class="chip" type="button"><i class="fa-solid fa-box" aria-hidden="true"></i> В товар</button>
+                    </div>
+                  </div>
+                  <div class="msg__time">14:33</div>
+                </div>
+              </div>
+
+            </section>
+          </main>
+
+          <!-- Чипы-подсказки -->
+          <div class="chat__prompts" aria-label="Быстрые подсказки">
+            <button class="chip" type="button" data-prompt="Сгенерируй описание товара"><i class="fa-solid fa-align-left" aria-hidden="true"></i> Описание</button>
+            <button class="chip" type="button" data-prompt="Сгенерируй название товара"><i class="fa-solid fa-tag" aria-hidden="true"></i> Название</button>
+            <button class="chip" type="button" data-prompt="Добавь SEO-ключи для Kufar"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> SEO-ключи</button>
+            <button class="chip" type="button" data-prompt="Сделай анализ актуальности товара"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> Анализ</button>
+            <button class="chip" type="button" data-prompt="Сгенерируй изображение для карточки"><i class="fa-regular fa-image" aria-hidden="true"></i> Изображение</button>
+          </div>
+
+          <!-- Поле ввода -->
+          <form class="chat__composer" data-chat-form>
+            <label class="sr-only" for="chatMessage">Сообщение</label>
+            <textarea class="chat__field" id="chatMessage" data-chat-field rows="1"
+                      placeholder="Введите сообщение…"></textarea>
+            <button class="chat__send" type="submit" aria-label="Отправить">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+
+      <!-- Затемнение drawer -->
+      <div class="chat-backdrop" data-history-backdrop aria-hidden="true"></div>
+
+      <!-- Нижняя навигация (мобильные) -->
+      <footer class="tabbar" aria-label="Основная навигация">
+        <a class="tab" href="home.html">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Главная</span>
+        </a>
+        <a class="tab" href="product.html">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          <span>Товары</span>
+        </a>
+        <a class="tab" href="chat.html" aria-current="page">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <span>ИИ-чат</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span>Профиль</span>
+        </a>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/app.min.js" defer></script>
+</body>
+</html>
