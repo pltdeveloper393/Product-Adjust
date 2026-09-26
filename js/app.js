@@ -179,6 +179,30 @@
   }
 
   /* ----------------------------------------------------------
+     7. Авторизация: переход на главную после входа
+     ---------------------------------------------------------- */
+  function initAuthForm() {
+    var form = document.querySelector('[data-auth-form]');
+    if (!form) return;
+
+    function goHome() {
+      window.location.href = 'home.html';
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      goHome();
+    });
+
+    form.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        goHome();
+      }
+    });
+  }
+
+  /* ----------------------------------------------------------
      Инициализация
      ---------------------------------------------------------- */
   function init() {
@@ -188,6 +212,7 @@
     initChatInput();
     initChatSend();
     initChatPrompts();
+    initAuthForm();
   }
 
   if (document.readyState === 'loading') {
