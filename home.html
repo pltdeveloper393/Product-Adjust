@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#060B16">
+  <meta name="description" content="Product ADJust — центр управления карточками товаров.">
+  <title>Главная — Product ADJust</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Боковая навигация (планшет/десктоп, скрывается по кнопке) -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="brand__icon">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="gi-s-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+              </linearGradient>
+              <linearGradient id="gi-s-stem" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                  fill="url(#gi-s-body)" fill-rule="evenodd"/>
+            <rect x="18" y="12" width="20" height="76" fill="url(#gi-s-stem)"/>
+            <circle cx="28" cy="50" r="6" fill="#060B16"/>
+            <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+          </svg>
+        </span>
+        <span class="brand__text"><span>Product </span><span class="a">A</span><span class="d">D</span><span>Just</span></span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Основная навигация">
+        <a class="sidebar__link" href="home.html" aria-current="page">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          Главная
+        </a>
+        <a class="sidebar__link" href="product.html">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          Товары
+        </a>
+        <a class="sidebar__link" href="chat.html">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          ИИ-чат
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          Анализ
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          Профиль
+        </a>
+      </nav>
+
+      <div class="sidebar__spacer"></div>
+
+      <a class="sidebar__link" href="index.html">
+        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+        Выйти
+      </a>
+    </aside>
+
+    <div class="app__col">
+
+      <!-- Верхняя панель -->
+      <header class="appbar">
+        <button class="icon-btn only-desktop" type="button" data-nav-toggle
+                aria-label="Скрыть меню" aria-expanded="true">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <a class="brand appbar__brand" href="home.html" aria-label="Product ADJust — на главную">
+          <span class="brand__icon">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+              <defs>
+                <linearGradient id="gi-a-body" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+                </linearGradient>
+                <linearGradient id="gi-a-stem" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                    fill="url(#gi-a-body)" fill-rule="evenodd"/>
+              <rect x="18" y="12" width="20" height="76" fill="url(#gi-a-stem)"/>
+              <circle cx="28" cy="50" r="6" fill="#060B16"/>
+              <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+            </svg>
+          </span>
+          <span class="brand__text"><span>Product </span><span class="a">A</span><span class="d">D</span><span>Just</span></span>
+        </a>
+
+        <div class="search appbar__search">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input class="input" type="search" placeholder="Поиск товаров…" aria-label="Поиск товаров">
+        </div>
+
+        <div class="appbar__actions">
+          <button class="icon-btn appbar__notif" type="button" aria-label="Уведомления">
+            <i class="fa-solid fa-bell" aria-hidden="true"></i>
+          </button>
+          <span class="avatar" aria-label="Профиль Ивана">И</span>
+        </div>
+      </header>
+
+      <!-- Контент -->
+      <main class="main">
+
+        <section class="hero" aria-label="Рабочая область">
+          <div class="hero__head">
+            <h1 class="hero__title">Центр управления</h1>
+            <div class="rate" aria-label="Курс доллара к белорусскому рублю">
+              <i class="fa-solid fa-dollar-sign rate__icon" aria-hidden="true"></i>
+              <span class="rate__value">3,02 BYN</span>
+              <span class="rate__delta"><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> +0,4%</span>
+            </div>
+          </div>
+          <p class="hero__sub">3 карточки ждут настройки — ИИ готов помочь</p>
+        </section>
+
+        <section class="quick" aria-label="Быстрые действия">
+          <button class="quick__card quick__card--accent" type="button">
+            <span class="quick__icon"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
+            <span class="quick__title">Новый товар</span>
+            <span class="quick__sub">Загрузите фото — ИИ сделает карточку</span>
+          </button>
+          <button class="quick__card" type="button">
+            <span class="quick__icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></span>
+            <span class="quick__title">Анализ</span>
+            <span class="quick__sub">Тренды и SEO по категории</span>
+          </button>
+        </section>
+
+        <section aria-labelledby="recentTitle">
+          <div class="section-head" style="margin-bottom:.75rem;">
+            <h2 class="section-head__title" id="recentTitle">Последние товары</h2>
+            <a class="section-head__link" href="product.html">Все →</a>
+          </div>
+
+          <ul class="product-list">
+            <li class="product">
+              <div class="product__thumb">
+                <div class="media-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+              </div>
+              <div class="product__info">
+                <div class="product__name">Кроссовки Nike Air Max</div>
+                <div class="product__meta">Обновлено 2 часа назад</div>
+              </div>
+              <span class="badge badge--success">Готово</span>
+            </li>
+            <li class="product">
+              <div class="product__thumb">
+                <div class="media-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+              </div>
+              <div class="product__info">
+                <div class="product__name">Рюкзак Urban Classic</div>
+                <div class="product__meta">В процессе настройки</div>
+              </div>
+              <span class="badge badge--warning">В работе</span>
+            </li>
+            <li class="product">
+              <div class="product__thumb">
+                <div class="media-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+              </div>
+              <div class="product__info">
+                <div class="product__name">Наушники Sound Pro</div>
+                <div class="product__meta">Черновик</div>
+              </div>
+              <span class="badge badge--draft">Черновик</span>
+            </li>
+          </ul>
+        </section>
+
+      </main>
+
+      <!-- Нижняя навигация (мобильные) -->
+      <footer class="tabbar" aria-label="Основная навигация">
+        <a class="tab" href="home.html" aria-current="page">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Главная</span>
+        </a>
+        <a class="tab" href="product.html">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          <span>Товары</span>
+        </a>
+        <a class="tab" href="chat.html">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <span>ИИ-чат</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span>Профиль</span>
+        </a>
+      </footer>
+
+    </div>
+
+    <!-- Плавающая кнопка (мобильные) -->
+    <button class="fab" type="button" aria-label="Создать новый товар">
+      <i class="fa-solid fa-plus" aria-hidden="true"></i>
+    </button>
+
+  </div>
+
+  <script src="js/app.min.js" defer></script>
+</body>
+</html>
