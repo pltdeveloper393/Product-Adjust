@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#060B16">
+  <meta name="description" content="Product ADJust — детали и редактирование карточки товара.">
+  <title>Детали товара — Product ADJust</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Боковая навигация (планшет/десктоп) -->
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <span class="brand__icon">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <linearGradient id="gi-p-body" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E8EDF5"/><stop offset="100%" stop-color="#7C8AA3"/>
+              </linearGradient>
+              <linearGradient id="gi-p-stem" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#C7D2FE"/><stop offset="100%" stop-color="#818CF8"/>
+              </linearGradient>
+            </defs>
+            <path d="M18 12 L48 12 C74 12 90 30 90 50 C90 70 74 88 48 88 L18 88 Z M38 30 L48 30 C60 30 70 38 70 50 C70 62 60 70 48 70 L38 70 Z"
+                  fill="url(#gi-p-body)" fill-rule="evenodd"/>
+            <rect x="18" y="12" width="20" height="76" fill="url(#gi-p-stem)"/>
+            <circle cx="28" cy="50" r="6" fill="#060B16"/>
+            <circle cx="28" cy="50" r="2.5" fill="#C7D2FE"/>
+          </svg>
+        </span>
+        <span class="brand__text"><span>Product </span><span class="a">A</span><span class="d">D</span><span>Just</span></span>
+      </div>
+
+      <nav class="sidebar__nav" aria-label="Основная навигация">
+        <a class="sidebar__link" href="home.html">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          Главная
+        </a>
+        <a class="sidebar__link" href="product.html" aria-current="page">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          Товары
+        </a>
+        <a class="sidebar__link" href="chat.html">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          ИИ-чат
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+          Анализ
+        </a>
+        <a class="sidebar__link" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          Профиль
+        </a>
+      </nav>
+
+      <div class="sidebar__spacer"></div>
+
+      <a class="sidebar__link" href="index.html">
+        <i class="fa-solid fa-right-from-bracket" aria-hidden="true"></i>
+        Выйти
+      </a>
+    </aside>
+
+    <div class="app__col">
+
+      <header class="appbar">
+        <button class="icon-btn only-desktop" type="button" data-nav-toggle
+                aria-label="Скрыть меню" aria-expanded="true">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+
+        <!-- Мобильные: назад + заголовок + действия иконками -->
+        <a class="icon-btn only-mobile" href="home.html" aria-label="Назад">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        </a>
+        <h1 class="appbar__title only-mobile">Детали товара</h1>
+        <div class="appbar__actions only-mobile">
+          <button class="icon-btn" type="button" aria-label="Редактировать">
+            <i class="fa-solid fa-pen" aria-hidden="true"></i>
+          </button>
+          <button class="icon-btn icon-btn--primary" type="button" aria-label="Опубликовать">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <!-- Десктопные: крошки + действия -->
+        <nav class="crumbs only-desktop" aria-label="Хлебные крошки">
+          <a href="home.html">Главная</a>
+          <span aria-hidden="true">/</span>
+          <a href="product.html">Товары</a>
+          <span aria-hidden="true">/</span>
+          <span class="current">Кроссовки Nike Air Max</span>
+        </nav>
+        <div class="appbar__actions only-desktop">
+          <button class="btn btn--outline btn--sm" type="button">
+            <i class="fa-solid fa-pen" aria-hidden="true"></i>
+            Редактировать
+          </button>
+          <button class="btn btn--primary btn--sm" type="button">
+            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+            Экспорт
+          </button>
+          <button class="btn btn--danger btn--sm" type="button">
+            <i class="fa-solid fa-trash-can" aria-hidden="true"></i>
+            Удалить
+          </button>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="detail__grid">
+
+          <!-- Фото товара: мобильные — во всю ширину, десктоп — крупное -->
+          <div class="detail__media">
+            <div class="detail__hero">
+              <div class="media-placeholder"><i class="fa-regular fa-image" aria-hidden="true"></i></div>
+              <span class="badge badge--success">Готово</span>
+            </div>
+          </div>
+
+          <div class="detail__aside">
+            <div class="detail__titlerow">
+              <h2 class="detail__name">Кроссовки Nike Air Max 90</h2>
+              <div class="detail__price">499 BYN</div>
+            </div>
+
+            <section class="stack stack--sm">
+              <h3 class="section-label">Название для маркетплейса</h3>
+              <p class="detail__text">Кроссовки мужские Nike Air Max 90 — спортивная обувь оригинальная</p>
+            </section>
+
+            <section class="stack stack--sm">
+              <h3 class="section-label">Описание</h3>
+              <p class="detail__text">Nike Air Max 90 — классика спортивного стиля. Верх из сетчатого материала обеспечивает дыхание ног, а система Air Max в области пятки гарантирует амортизацию при каждом шаге. Идеальны для повседневной носки и спорта.</p>
+            </section>
+
+            <section class="stack stack--sm">
+              <h3 class="section-label">SEO-ключи</h3>
+              <div class="tags">
+                <span class="tag">nike air max 90</span>
+                <span class="tag">кроссовки nike</span>
+                <span class="tag">спортивная обувь</span>
+                <span class="tag">air max классика</span>
+                <span class="tag">nike оригинальные</span>
+                <span class="tag">кроссовки для бега</span>
+              </div>
+            </section>
+
+            <section class="stack stack--sm">
+              <h3 class="section-label">Маркетплейсы</h3>
+              <div class="row" style="gap:.5rem; flex-wrap:wrap;">
+                <span class="badge badge--success">Wildberries</span>
+                <span class="badge badge--warning">Kufar</span>
+                <span class="badge badge--draft">Onliner</span>
+              </div>
+            </section>
+          </div>
+
+        </div>
+      </main>
+
+      <!-- Нижняя навигация (мобильные) -->
+      <footer class="tabbar" aria-label="Основная навигация">
+        <a class="tab" href="home.html">
+          <i class="fa-solid fa-house" aria-hidden="true"></i>
+          <span>Главная</span>
+        </a>
+        <a class="tab" href="product.html" aria-current="page">
+          <i class="fa-solid fa-box" aria-hidden="true"></i>
+          <span>Товары</span>
+        </a>
+        <a class="tab" href="chat.html">
+          <i class="fa-solid fa-comments" aria-hidden="true"></i>
+          <span>ИИ-чат</span>
+        </a>
+        <a class="tab" href="#">
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <span>Профиль</span>
+        </a>
+      </footer>
+
+    </div>
+  </div>
+
+  <script src="js/app.min.js" defer></script>
+</body>
+</html>
